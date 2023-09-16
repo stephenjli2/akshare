@@ -136,7 +136,7 @@ def macro_china_nbs_nation(
         wn_df_list[1]["fname"],
     )
 
-    data_ndarray = np.reshape(temp_df["data"], (len(row_name), len(column_name)))
+    data_ndarray = np.reshape(np.array(temp_df["data"]), (len(row_name), len(column_name)))
     data_df = pd.DataFrame(data=data_ndarray, columns=column_name, index=row_name)
     data_df.index.name = None
     data_df.columns.name = None
@@ -251,7 +251,7 @@ def macro_china_nbs_region(
         row_name, column_name = wn_df_list[0]["fname"], wn_df_list[2]["fname"]
         title_name = wn_df_list[1]["fname"][0]
 
-    data_ndarray = np.reshape(temp_df["data"], (len(row_name), len(column_name)))
+    data_ndarray = np.reshape(np.array(temp_df["data"]), (len(row_name), len(column_name)))
     data_df = pd.DataFrame(data=data_ndarray, columns=column_name, index=row_name)
     data_df.index.name = None
     data_df.columns.name = title_name
